@@ -1,6 +1,6 @@
 # Ex-Snippet
 
-Custom vscode snippet for elixir. This snippet contain code template for creating elixir modules such as GenServer and GenStage.
+Sometimes Elixir modules such as `GenServer` and `GenStage` has a lot of boiler plates or configurations hence to save developer's time in copy pasting or memorizing these boiler plates, this snippet acts as an helper to generate code template for elixir modules such as `GenServer`, `GenStage`, and etc.
 
 ## Setup
 
