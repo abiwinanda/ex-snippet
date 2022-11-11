@@ -112,5 +112,44 @@
 			"end"
 		],
 		"description": "Template for genstage producer"
+	},
+	"GenStage consumer": {
+		"prefix": "genstage.consumer",
+		"body": [
+			"defmodule ${1:GenStage.Consumer} do",
+			"\t@moduledoc \"\"\"",
+			"\tmodule doc",
+			"\t\"\"\"",
+			"\tuse GenStage",
+			"",
+			"\t##########",
+			"\t# Client #",
+			"\t##########",
+			"",
+			"\tdef start_link(args) do",
+			"\t\tGenStage.start_link(__MODULE__, args)",
+			"\tend",
+			"",
+			"\t##########",
+  			"\t# Server #",
+  			"\t##########",
+			"",
+			"\tdef init(initial_state) do",
+			"\t\tsub_opts = [{${2:Producer}, min_demand: ${3:0}, max_demand: ${4:10}}]",
+			"\t\t{:consumer, initial_state, subscribe_to: sub_opts}",
+			"\tend",
+			"",
+			"\tdef handle_events(events, _from, state) do",
+    		"\t\t# Process list of events",
+			"\t\t",
+			"\t\t# Enum.each(events, fn event ->",
+    		"\t\t#   process(event)",
+    		"\t\t# end)",
+			"\t\t",
+			"\t\t{:noreply, [], state}",
+  			"\tend",
+			"end"
+		],
+		"description": "Template for genstage consumer"
 	}
 }
