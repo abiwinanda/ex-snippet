@@ -1,6 +1,6 @@
 # Ex-Snippet
 
-Sometimes Elixir modules such as `GenServer` and `GenStage` has a lot of boilerplates or configurations hence to save developer's time in copy pasting or memorizing these boilerplates, this snippet acts as a helper to generate code template for elixir modules such as `GenServer`, `GenStage`, and etc.
+Sometimes Elixir modules such as `GenServer` and `GenStage` has a lot of boilerplates or configurations hence to save developer's time in copy pasting or memorizing these boilerplates, this snippet acts as a helper to generate code template for elixir modules such as `GenServer`, `GenStage`, `Supervisor` and etc.
 
 ## Setup
 
@@ -33,3 +33,11 @@ The snippets contain in this repo are as follow:
 ### `genstage.producerconsumer`
 
 ![genserver](./imgs/genstage-producerconsumer.gif)
+
+### `supervisor`
+
+![genserver](./imgs/supervisor.gif)
+
+### `consumersupervisor`
+
+![genserver](./imgs/consumer-supervisor.gif)
