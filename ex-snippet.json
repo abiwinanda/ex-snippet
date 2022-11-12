@@ -211,6 +211,40 @@
 			"\tend",
 			"end"
 		],
-		"description": "Template for genstage producer-consumer"
+		"description": "Template for supervisor module"
 	},
+	"ConsumerSupervisor module": {
+		"prefix": "consumersupervisor",
+		"body": [
+			"defmodule ${1:OTP}.${2:ConsumerSupervisor} do",
+			"\tuse ConsumerSupervisor",
+			"",
+			"\tdef start_link(_args) do",
+			"\t\tConsumerSupervisor.start_link(__MODULE__, :ok)",
+			"\tend",
+			"",
+			"\tdef init(:ok) do",
+			"\t\tchildren = [",
+			"\t\t\t%{",
+			"\t\t\t\tid: ${3:Consumer},",
+			"\t\t\t\tstart: {${3:Consumer}, :${4:start_link}, []},",
+			"\t\t\t\trestart: :${5|temporary,transient|}",
+			"\t\t\t}",
+			"\t\t]",
+			"\t\t",
+			"\t\topts = [",
+			"\t\t\tstrategy: :one_for_one,",
+			"\t\t\tsubscribe_to: [",
+			"\t\t\t\t# Optional: set max_demand to System.schedulers_online() to adjust",
+			"\t\t\t\t# the concurrency limit according to your system resources",
+			"\t\t\t\t{Producer, max_demand: ${6:2}}",
+			"\t\t\t]",
+			"\t\t]",
+			"\t\t",
+    		"\t\tConsumerSupervisor.init(children, opts)",
+			"\tend",
+			"end"
+		],
+		"description": "Template for consumer supervisor"
+	}
 }
