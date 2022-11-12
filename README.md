@@ -1,6 +1,6 @@
 # Ex-Snippet
 
-Sometimes Elixir modules such as `GenServer` and `GenStage` has a lot of boilerplates or configurations hence to save developer's time in copy pasting or memorizing these boilerplates, this snippet acts as a helper to generate code template for elixir modules such as `GenServer`, `GenStage`, `Supervisor` and etc.
+Sometimes Elixir modules such as `GenServer` and `GenStage` has a lot of boilerplates or configurations hence to save developer's time in copy pasting or memorizing these boilerplates, this snippet acts as a helper to generate code template for elixir modules such as `GenServer`, `GenStage`, `Supervisor`, and etc.
 
 ## Setup
 
