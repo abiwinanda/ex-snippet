@@ -186,5 +186,31 @@
 			"end"
 		],
 		"description": "Template for genstage producer-consumer"
-	}
+	},
+	"Supervisor module": {
+		"prefix": "supervisor",
+		"body": [
+			"defmodule ${1:OTP}.${2:Supervisor} do",
+			"\t# See https://hexdocs.pm/elixir/Supervisor.html#module-restart-values-restart",
+  			"\t# to understand the restart strategy",
+			"\tuse Supervisor, restart: :${3|permanent,temporary,transient|}",
+			"",
+			"\tdef start_link(args) do",
+			"\t\tSupervisor.start_link(__MODULE__, args)",
+			"\tend",
+			"",
+			"\tdef init(args) do",
+			"\t\tchildren = [",
+			"\t\t\t{${4:Child}, args}",
+			"\t\t]",
+			"\t\t",
+			"\t\t# See https://hexdocs.pm/elixir/Supervisor.html#module-supervisor-strategies-and-options",
+    		"\t\t# to understand the strategies and supported options",
+    		"\t\topts = [strategy: :${5|one_for_one,one_for_all,rest_for_one|}, max_seconds: 30]",
+    		"\t\tSupervisor.init(children, opts)",
+			"\tend",
+			"end"
+		],
+		"description": "Template for genstage producer-consumer"
+	},
 }
